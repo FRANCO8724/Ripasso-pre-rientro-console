@@ -134,6 +134,15 @@ namespace Ripasso_pre_rientro
 
                         break;
 
+                    case 5:
+
+                        Console.Clear();
+                        Console.WriteLine("Inserire records da aggiungere:");
+                        string d = Console.ReadLine();
+                        f.Aggrecord(d);
+
+                        break;
+
                 }
 
     
