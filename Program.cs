@@ -34,9 +34,9 @@ namespace Ripasso_pre_rientro
                 Console.WriteLine("          3 - Lunghezza massima dei record: ");
                 Console.WriteLine("          4 - Lunghezza fissa dei record: ");
                 Console.WriteLine("          5 - Aggiunta record: ");
-                Console.WriteLine("          6 - Modifica di un nome: ");
-                Console.WriteLine("          7 - Visualizzazione di tre campi a scelta: ");
-                Console.WriteLine("          8 - Ricerca campo di un record: ");
+                Console.WriteLine("          6 - Visualizzazione di tre campi a scelta: ");
+                Console.WriteLine("          7 - Ricerca record: ");
+                Console.WriteLine("          8 - Modifica record: ");
                 Console.WriteLine("          9 - Cancellazione logica: ");
                 Console.WriteLine(" ");
                 Console.WriteLine("0 - uscita");
@@ -140,6 +140,150 @@ namespace Ripasso_pre_rientro
                         Console.WriteLine("Inserire records da aggiungere:");
                         string d = Console.ReadLine();
                         f.Aggrecord(d);
+
+                        break;
+
+                    case 6:
+          
+                        string[] r = new string [3];   
+
+                        Console.Clear();
+                        Console.WriteLine("Inserire numero di campi da cercare (massimo 3): ");
+                        int cont = int.Parse(Console.ReadLine());
+
+                        for(int i=0; i<cont; i++)
+                        {
+                            Console.Clear();
+                            Console.WriteLine("Inserire campo da cercare: ");
+                            r[i] = Console.ReadLine();
+                        }
+
+                        string aa = r[0];
+                        string b = r[1];
+                        string c = r[2];
+
+                        int a1 = 0;
+                        int b1 = 0;
+                        int c1 = 0;
+
+                        bool a2 = false;
+                        bool b2 = false;
+                        bool c2 = false;
+
+                        string[] pa = new string[1000];
+                        string[] pb = new string[1000];
+                        string[] pc = new string[1000];
+
+                        using (StreamReader sw = new StreamReader(path))
+                        {
+                            string dd = sw.ReadLine();
+
+                            string[] campi = dd.Split(';');
+
+                            int dim = 0;
+
+                            for (int i = 0; i < campi.Length; i++)
+                            {
+                                if (aa == "miovalore")
+                                {
+                                    a1 = 11;
+                                }
+                                else
+                                {
+                                    if (aa == "")
+                                    {
+                                        a2 = true;
+                                    }
+                                    else
+                                    {
+                                        if (campi[dim] == aa)
+                                        {
+                                            a1 = dim;
+                                        }
+                                    }
+                                }
+
+                                if (b == "miovalore")
+                                {
+                                    b1 = 11;
+                                }
+                                else
+                                {
+                                    if (b == "")
+                                    {
+                                        b2 = true;
+                                    }
+                                    else
+                                    {
+                                        if (campi[dim] == b)
+                                        {
+                                            b1 = dim;
+                                        }
+                                    }
+                                }
+
+                                if (c == "miovalore")
+                                {
+                                    c1 = 11;
+                                }
+                                else
+                                {
+                                    if (c == "")
+                                    {
+                                        c2 = true;
+                                    }
+                                    else
+                                    {
+                                        if (campi[dim] == c)
+                                        {
+                                            c1 = dim;
+                                        }
+                                    }
+                                }
+
+                                dim++;
+                            }
+
+                            Console.Clear();
+
+                            while (dd != null)
+                            {
+
+                                string[] campi2 = dd.Split(';');
+
+                                if (a2 == true)
+                                {
+                                    Console.WriteLine("Campo 1:");
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Campo 1:" + campi2[a1]);
+                                }
+
+                                if (b2 == true)
+                                {
+                                    Console.WriteLine("Campo 2:");
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Campo 1:" + campi2[b1]);
+                                }
+
+                                if (c2 == true)
+                                {
+                                    Console.WriteLine("Campo 3:");
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Campo 3:" + campi2[c1]);
+                                }
+
+                                Console.WriteLine("");
+
+                                d = sw.ReadLine();
+                            }
+
+                        }
 
                         break;
 
