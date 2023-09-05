@@ -170,10 +170,6 @@ namespace Ripasso_pre_rientro
                         bool b2 = false;
                         bool c2 = false;
 
-                        string[] pa = new string[1000];
-                        string[] pb = new string[1000];
-                        string[] pc = new string[1000];
-
                         using (StreamReader sw = new StreamReader(path))
                         {
                             string dd = sw.ReadLine();
@@ -280,10 +276,36 @@ namespace Ripasso_pre_rientro
 
                                 Console.WriteLine("");
 
-                                d = sw.ReadLine();
+                                dd = sw.ReadLine();
                             }
 
                         }
+
+                        break;
+
+                    case 7:
+
+                        Console.Clear();
+                        Console.WriteLine("Inserire campo del record da cercare: ");
+                        string w = Console.ReadLine();
+
+                       string w1 = f.Ricercarec(w);
+
+                        Console.WriteLine(w1);
+
+                        break;
+
+                        case 8:
+
+                        Console.Clear();
+                        Console.WriteLine("Inserire campo del record da modificare: ");
+                        string h = Console.ReadLine();
+
+                        Console.Clear();
+                        Console.WriteLine("Inserire nuovo record: ");
+                        string h2 = Console.ReadLine();
+
+                        f.Modifica(h,h2);
 
                         break;
 
