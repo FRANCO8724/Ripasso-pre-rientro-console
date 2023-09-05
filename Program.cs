@@ -24,7 +24,7 @@ namespace Ripasso_pre_rientro
             
 
             //stuttura menù
-            do
+            do 
             {
                 //stampa delle opzioni
 
