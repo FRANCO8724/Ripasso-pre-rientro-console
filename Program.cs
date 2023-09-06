@@ -169,119 +169,93 @@ namespace Ripasso_pre_rientro
                         bool a2 = false;
                         bool b2 = false;
                         bool c2 = false;
-
+                       
                         using (StreamReader sw = new StreamReader(path))
                         {
-                            string dd = sw.ReadLine();
+                            string ddd = sw.ReadLine();
 
-                            string[] campi = dd.Split(';');
+                            string[] campi = ddd.Split(';');
 
                             int dim = 0;
 
                             for (int i = 0; i < campi.Length; i++)
                             {
-                                if (aa == "miovalore")
+                                if (aa == campi[dim])
                                 {
-                                    a1 = 11;
+                                    a1 = dim;
                                 }
-                                else
+                                if (b == campi[dim])
                                 {
-                                    if (aa == "")
-                                    {
-                                        a2 = true;
-                                    }
-                                    else
-                                    {
-                                        if (campi[dim] == aa)
-                                        {
-                                            a1 = dim;
-                                        }
-                                    }
+                                    b1 = dim;
+                                }
+                                if (c == campi[dim])
+                                {
+                                    c1 = dim;
                                 }
 
-                                if (b == "miovalore")
+                                if (aa == "")
                                 {
-                                    b1 = 11;
+                                    a2 = true;
                                 }
-                                else
+                                if (b == "")
                                 {
-                                    if (b == "")
-                                    {
-                                        b2 = true;
-                                    }
-                                    else
-                                    {
-                                        if (campi[dim] == b)
-                                        {
-                                            b1 = dim;
-                                        }
-                                    }
+                                    b2 = true;
                                 }
-
-                                if (c == "miovalore")
+                                if (c == "")
                                 {
-                                    c1 = 11;
-                                }
-                                else
-                                {
-                                    if (c == "")
-                                    {
-                                        c2 = true;
-                                    }
-                                    else
-                                    {
-                                        if (campi[dim] == c)
-                                        {
-                                            c1 = dim;
-                                        }
-                                    }
+                                    c2 = true;
                                 }
 
                                 dim++;
                             }
 
-                            Console.Clear();
+                        }
 
-                            while (dd != null)
+                        using (StreamReader sw = new StreamReader(path))
+                        {
+                            string ddd = sw.ReadLine();
+
+                            while (ddd != null)
                             {
 
-                                string[] campi2 = dd.Split(';');
+                                string[] campi = ddd.Split(';');
 
                                 if (a2 == true)
                                 {
-                                    Console.WriteLine("Campo 1:");
+                                    Console.WriteLine("Campo1: ");
                                 }
                                 else
                                 {
-                                    Console.WriteLine("Campo 1:" + campi2[a1]);
+                                    Console.WriteLine("Campo1: " + campi[a1]);
                                 }
 
                                 if (b2 == true)
                                 {
-                                    Console.WriteLine("Campo 2:");
+                                    Console.WriteLine("Campo2: ");
                                 }
                                 else
                                 {
-                                    Console.WriteLine("Campo 1:" + campi2[b1]);
+                                    Console.WriteLine("Campo2: " + campi[b1]);
                                 }
 
                                 if (c2 == true)
                                 {
-                                    Console.WriteLine("Campo 3:");
+                                    Console.WriteLine("Campo3: ");
                                 }
                                 else
                                 {
-                                    Console.WriteLine("Campo 3:" + campi2[c1]);
+                                    Console.WriteLine("Campo3: " + campi[c1]);
                                 }
 
                                 Console.WriteLine("");
 
-                                dd = sw.ReadLine();
+                                ddd = sw.ReadLine();
+
                             }
-
                         }
+                
 
-                        break;
+                break;
 
                     case 7:
 
