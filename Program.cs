@@ -283,6 +283,17 @@ namespace Ripasso_pre_rientro
 
                         break;
 
+                    case 9:
+
+                        Console.Clear();
+                        Console.WriteLine("Inserire campo del record da ancellare: ");
+
+                        string h3 = Console.ReadLine();
+
+                        f.Canclog(h3);
+
+                        break;
+
                 }
 
     
